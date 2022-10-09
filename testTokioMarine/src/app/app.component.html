@@ -68,44 +68,75 @@
     color: rgba(148, 105, 42, 0.7);
   }
 
+  .modal-content{
+    color: #808080;
+    display: inline-block;
+    margin-left: 10%;
+    margin-right: 70%;
+    text-align: justify;
+  }
+
+  .d-block{
+    width: 70%;
+  }
+
+  #text-modal{
+    padding: 2%;
+    text-align: justify;
+  }
+
+
+
 </style>
 
   <nav>
     <ul>
-      <li><a href="#">Sobre</a></li>
+      <li><a href="#" data-toggle="modal" data-target=".modal-lg">Sobre</a></li>
       <li><a href="#">Abra já a sua conta</a></li>
       <li><a href="#">Quer fazer uma cotação</a></li>
-      <li><a href="">Seguradora Sandy</a></li>
+      <li><a href="">Bright Hills Insurance Services</a></li>
       <li><a href="#">Faça já uma transferência</a></li>
     </ul>
   </nav>
 
-  <br>
-  <div id="carrousel" class="carrousel slide" data-ride="carrousel">
-    <div class="carrousel-inner">
-<!-- Aamanha pegar imagem do carrousel e finalizar o front-->
-      <div class="carrousel-images">
-          <img src="" class="imgs-carrousel">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/img/transferencia.jpg" class="d-block">
       </div>
-      <div class="carrousel-images">
-          <img src="imgs/moneys.jpg" class="imgs-carrousel">
+      <div class="carousel-item">
+        <img src="assets/img/seguradora2.jpg" class="d-block" alt="...">
       </div>
-
+      <div class="carousel-item">
+        <img src="assets/img/venha.jpg" class="d-block" alt="...">
+      </div>
     </div>
   </div>
 
+<div class="modal fade modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div id="text-modal">
+          <h1>Sobre</h1>
+          <p>Bright Hills Insurance Services é uma agência de seguros líder com sede na Califórnia. Somos uma agência experiente com mais de 50 anos de experiência no setor de seguros. Nossa equipe é composta por profissionais de seguros dedicados que sempre fornecerão o melhor serviço possível. Nosso slogan é 'Estamos aqui para você quando você precisar de nós' e trabalhamos duro para cumprir essa declaração diariamente.</p>
+          <p>Cada cliente que vem para a Bright Hills Insurance Services sai satisfeito com o nível de atendimento que oferecemos. providenciar.</p>
+          <p>Temos agentes em todos os níveis de experiência e todos trabalham diligentemente para atender às suas necessidades como cliente.</p>
+          <p>Quer esteja à procura de um seguro automóvel, residencial ou de vida, temos um plano de seguros que vai de encontro às suas necessidades.</p>
+          <p>Também oferecemos planos de seguro contra acidentes, invalidez e saúde para ajudá-lo a gerenciar suas necessidades de seguro.</p>
+          <p>Nós também fornecemos muitos tipos diferentes de assistência para as nossas necessidades de seguro automóvel e residencial.</p>
+          <p>Nossa equipe tem muitas maneiras diferentes de ajudar nossos clientes, o que os torna muito bem-sucedidos.
+          <p>Todo agente da Bright Hills fica atento a novos produtos e serviços que podem ajudá-lo a gerenciar suas necessidades de seguro. Ouvimos as necessidades dos nossos clientes e fornecemos sempre serviços de qualidade.</p>
+          <p>Isso inclui planos de seguro de vida, invalidez e saúde, bem como soluções de seguros comerciais.</p>
+          <p>Os agentes também cuidam de suas necessidades de envio de reivindicações sempre que você sofrer um acidente de carro ou declarar uma reivindicação de invalidez contra os limites de sua apólice.</p>
+          <p>Tudo o que fazemos é feito com um objetivo em mente - fornecer um serviço de qualidade para que você fique satisfeito com a escolha da sua seguradora!</p>
+          <p>Nossos clientes anteriores são um dos nossos maiores recursos quando se trata de encontrar novas oportunidades de negócios para nossa equipe . Todos os nossos clientes anteriores falam muito bem de nossa equipe e do serviço que receberam de nós.</p>
+          <p>Todos ficaram satisfeitos com a qualidade de nossos produtos e serviços, o que os levou a nos indicar seus amigos e familiares para necessidades de seguros.</p>
+          <p>Nossa forte base de clientes nos ajudou a nos tornar uma das principais agências do estado, dando-nos a oportunidade de trabalhar com muitas celebridades famosas! Ter essa oportunidade nos permitiu construir relacionamentos fortes com pessoas que precisam de seguro para seus negócios.</p>
+          <p>Isso nos permite fornecer um excelente serviço a celebridades de alto perfil que podem nem saber que precisam de seguro de nós!</p>
+          <p>Bright Hills Insurance Services dedica-se a fornecer um serviço excepcional a cada cliente. Somos uma agência experiente com mais de 50 anos de experiência no setor de seguros, o que nos permite atender às suas necessidades, independentemente da sua situação.</p>
+          <p>Os agentes da Bright Hills Insurance Services se dedicam a trabalhar duro para que você esteja sempre satisfeito com nosso trabalho. Estamos aqui para você quando você precisar de nós!</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!--  <modal>-->
-<!--    <div class="informations"> Digite seu nome: </div>-->
-<!--    <div id="name"><input type="text" placeholder="Digite seu nome completo"></div>-->
-<!--    <br>-->
-<!--    <div class="informations">Coloque o dia e o horário que deseja realizar a tranzação bancária:</div>-->
-<!--    <div id="day_hour"><input type="datetime-local"></div>-->
-<!--    <br>-->
-<!--    <div class="informations">Informe os dados da conta que deseja realizar as transferências:</div>-->
-<!--    <div id="receiver"><input type="text" placeholder="Digite os dados da conta"></div> <input type="button" value="Ok">-->
-<!--    <br>-->
-<!--    <br>-->
-<!--    <div class="informations">Informe o valor que deseja transferir para a conta selecionada:</div>-->
-<!--    <div id="value"><input type="text" placeholder="Digite o valor desejado"></div>-->
-<!--  </modal>-->
