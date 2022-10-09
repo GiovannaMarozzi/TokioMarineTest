@@ -1,36 +1,6 @@
 <style>
-  /*ul{*/
-  /*  height: 40px;*/
-  /*  width: 100%;*/
-  /*  padding: 2% 5% 2% 0%;*/
-  /*  background: linear-gradient(*/
-  /*    90deg,*/
-  /*    rgba(2, 0, 36, 1) 0%,*/
-  /*    rgba(9, 9, 121, 1) 35%,*/
-  /*    rgba(0, 212, 255, 1) 100%*/
-  /*  );*/
-  /*}*/
-
-  /*li a{*/
-  /*  color: white;*/
-  /*  margin-left: 2%;*/
-  /*  display: inline-block;*/
-  /*  text-align: center;*/
-  /*}*/
-
-  /*li{*/
-  /*  display: inline;*/
-  /*  float: right;*/
-  /*}*/
-
-  @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+   @import url(https://fonts.googleapis.com/css?family=Open+Sans);
   nav {
-    max-width: 100%;
-    /*mask-image: linear-gradient(90deg,*/
-    /*rgba(255, 255, 255, 0) 0%,*/
-    /*#ffffff 25%,*/
-    /*#ffffff 75%,*/
-    /*rgba(255, 255, 255, 0) 100%);*/
     margin: 0px;
     padding: 0px 0;
   }
@@ -95,11 +65,11 @@
       <li><a href="#">Abra já a sua conta</a></li>
       <li><a href="#">Quer fazer uma cotação</a></li>
       <li><a href="">Bright Hills Insurance Services</a></li>
-      <li><a href="#">Faça já uma transferência</a></li>
+      <li><a href="#" data-toggle="modal" data-target="#modal">Faça já uma transferência</a></li>
     </ul>
   </nav>
 
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="assets/img/transferencia.jpg" class="d-block">
@@ -140,3 +110,48 @@
   </div>
 </div>
 
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="transfer" id="modalLabel">Nova Transferência</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Digite o seu nome:</label>
+            <input type="text" class="form-control" id="recipient-name" placeholder="Digite seu nome completo">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Digite o número da sua conta:</label>
+            <input type="text" class="form-control" id="account-number" placeholder="Digite sua conta">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Digite o número da conta do destinatário:</label>
+            <input type="text" class="form-control" id="account-number-destination" placeholder="Digite o número da conta do destinatário">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Digite o valor da transferência:</label>
+            <input type="number" class="form-control" id="value" placeholder="Valor R$">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Data da tansferência:</label>
+            <input type="date" class="form-control" id="data_transfer">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Data de agendamento:</label>
+            <input type="date" class="form-control" id="appointment_date">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
