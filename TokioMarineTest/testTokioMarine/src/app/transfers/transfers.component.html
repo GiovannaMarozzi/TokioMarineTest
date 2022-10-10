@@ -1,15 +1,34 @@
-<h2>Cadastrados: </h2>
+<h2>Cadastro de Transferências:</h2>
+<hr>
+<form>
+  <p>Nome: <input type="text" name="name" [(ngModel)]="account.name"></p>
+  <p>Conta de Origem: <input type="text" name="ctOrigin" [(ngModel)]="account.ctOrigin"></p>
+  <p>Conta de Destino: <input type="text" name="ctDest" [(ngModel)]="account.ctDest"></p>
+  <p>Data da Transferência: <input type="date" name="dtTransfer" [(ngModel)]="account.dtTransfer"></p>
+  <p>Data de agendamento: <input type="date" name="dtAgendamento" [(ngModel)]="account.dtAgendamento"></p>
+  <button type="button" (click)="send()">Cadastrar</button>
+</form>
 
-<table>
+
+
+
+<h2>Cadastrados: </h2>
+<table >
   <tr>
-    <th>#id</th>
+    <th>Id</th>
     <th>Nome</th>
-    <th>Conta</th>
+    <th>Conta de Origem</th>
+    <th>Conta de Destino</th>
+    <th>Data de Transferencia</th>
+    <th>Data de Agendamento</th>
   </tr>
 
-  <tr>
-    <th>1</th>
-    <th>Teste</th>
-    <th>123456</th>
+  <tr *ngFor="let account of transfers ">
+    <th>{{account.id}}</th>
+    <th>{{account.name}}</th>
+    <th>{{account.ctOrigin}}</th>
+    <th>{{account.ctDest}}</th>
+    <th>{{account.dtTransfer}}</th>
+    <th>{{account.dtAgendamento}}</th>
   </tr>
 </table>
