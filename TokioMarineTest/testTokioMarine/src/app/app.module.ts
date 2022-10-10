@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TransfersComponent } from './transfers/transfers.component';
 
 import {TransfersService} from "./transfers.service";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import {TransfersService} from "./transfers.service";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HttpClientModule, TransfersService],
   bootstrap: [AppComponent]
