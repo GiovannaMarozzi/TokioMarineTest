@@ -8,8 +8,10 @@ import {AccountModel} from "./account.model";
   styleUrls: ['./transfers.component.css']
 })
 export class TransfersComponent implements OnInit {
+
   account: AccountModel = new AccountModel();
   transfers: Array<any> = new Array<any>();
+  public data: Date = new Date();
 
   constructor(private transfersService: TransfersService) { }
 
@@ -18,7 +20,6 @@ export class TransfersComponent implements OnInit {
   }
 
   send(){
-    console.log(this.account);
     this.transfersService.sendTransfer(this.account).subscribe(accounts =>{
       this.account = new AccountModel();
     }, error => {console.log(error)
