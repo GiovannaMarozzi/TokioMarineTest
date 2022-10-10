@@ -4,6 +4,7 @@
   <p>Nome: <input type="text" name="name" [(ngModel)]="account.name"></p>
   <p>Conta de Origem: <input type="text" name="ctOrigin" [(ngModel)]="account.ctOrigin"></p>
   <p>Conta de Destino: <input type="text" name="ctDest" [(ngModel)]="account.ctDest"></p>
+  <p>Valor da Transferência: <input type="number" name="ctDest" [(ngModel)]="account.value"></p>
   <p>Data da Transferência: <input type="date" name="dtTransfer" [(ngModel)]="account.dtTransfer"></p>
   <p>Data de agendamento: <input type="date" name="dtAgendamento" [(ngModel)]="account.dtAgendamento"></p>
   <button type="button" (click)="send()">Cadastrar</button>
@@ -19,8 +20,10 @@
     <th>Nome</th>
     <th>Conta de Origem</th>
     <th>Conta de Destino</th>
+    <th>Valor da Transferência</th>
     <th>Data de Transferencia</th>
     <th>Data de Agendamento</th>
+    <th>Resultádo Final</th>
   </tr>
 
   <tr *ngFor="let account of transfers ">
@@ -28,7 +31,9 @@
     <th>{{account.name}}</th>
     <th>{{account.ctOrigin}}</th>
     <th>{{account.ctDest}}</th>
+    <th>{{account.value}}</th>
     <th>{{account.dtTransfer}}</th>
     <th>{{account.dtAgendamento}}</th>
+<!--    <th>{{account.valueFinal}}</th>-->
   </tr>
 </table>
