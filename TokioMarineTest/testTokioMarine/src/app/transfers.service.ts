@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import * as http from "http";
 import {Observable} from "rxjs";
+import {AccountModel} from "./transfers/account.model";
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,10 @@ import {Observable} from "rxjs";
 export class TransfersService {
 
   constructor(private http: HttpClient) { }
+
+  sendTransfer(account: AccountModel): Observable<any>{
+    return this.http.post("http://localhost:3000/accounts", account);
+  }
 
   listAccounts(): Observable<any>{
     return this.http.get("http://localhost:3000/accounts")
