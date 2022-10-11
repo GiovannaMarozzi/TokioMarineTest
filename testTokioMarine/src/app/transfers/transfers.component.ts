@@ -20,10 +20,26 @@ export class TransfersComponent implements OnInit {
   }
 
   send(){
-    this.transfersService.sendTransfer(this.account).subscribe(accounts =>{
-      this.account = new AccountModel();
-    }, error => {console.log(error)
-    })
+    console.log("Data de transferencia: ", this.account.dtTransfer)
+    console.log("Data de agendamento: ", this.account.dtAgendamento)
+
+    if (this.account.dtTransfer == this.account.dtAgendamento){
+     let value = this.account.value
+      // @ts-ignore
+      value = value+ 3 + (30/100);
+
+    
+
+    }else {
+      console.log("não são iguais")
+    }
+
+
+
+    // this.transfersService.sendTransfer(this.account).subscribe(accounts =>{
+    //   this.account = new AccountModel();
+    // }, error => {console.log(error)
+    // })
   }
 
   listAccounts(){
