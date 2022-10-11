@@ -6,4 +6,5 @@ export class AccountModel{
   value: number | undefined;
   dtTransfer: string | undefined;
   dtAgendamento: string | undefined;
+  valueFinal: number | undefined;
 }

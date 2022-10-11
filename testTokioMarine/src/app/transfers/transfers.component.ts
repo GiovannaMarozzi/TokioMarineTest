@@ -12,6 +12,7 @@ export class TransfersComponent implements OnInit {
   account: AccountModel = new AccountModel();
   transfers: Array<any> = new Array<any>();
   public data: Date = new Date();
+  public valueFinal: any;
 
 
   constructor(private transfersService: TransfersService) { }
@@ -29,39 +30,37 @@ export class TransfersComponent implements OnInit {
 
     let value = this.account.value
 
-    var valueFinal;
-
     // @ts-ignore
     if(diffInDays == 0 && this.account.value <= 1000){
       // @ts-ignore
-      valueFinal = value + 3 + (30 / 100);
+      this.valueFinal = value + 3 + (30 / 100);
       // console.log(valueFinal)
       // @ts-ignore
     }else if (diffInDays <= 10 && (this.account.value >= 1001 && this.account.value <= 2000)){
       // @ts-ignore
-      valueFinal = value + 12;
+      this.valueFinal = value + 12;
       // @ts-ignore
     }else if (diffInDays > 10 && this.account.value >= 2000){
       // @ts-ignore
-      valueFinal = value - (8.2/100);
+      this.valueFinal = value - (8.2/100);
       // @ts-ignore
     }else if(diffInDays >= 20 && this.account.value >= 2000){
       // @ts-ignore
-      valueFinal = value - (6.9/100);
+      this.valueFinal = value - (6.9/100);
       // @ts-ignore
     }else if(diffInDays >= 30 && this.account.value >= 2000){
       // @ts-ignore
-      valueFinal = value - (4.7/100);
+      this.valueFinal = value - (4.7/100);
       // @ts-ignore
     }else if (diffInDays >= 40 && this.account.value >= 2000){
       // @ts-ignore
-      valueFinal = value - (1.7/100);
+      this.valueFinal = value - (1.7/100);
     }else{
       alert("Erro ao realizar a transferência")
     }
 
     this.transfersService.sendTransfer(this.account).subscribe(accounts =>{
-      this.account = new AccountModel();
+      // this.account = new AccountModel();
     }, error => {console.log(error)
     })
   }
