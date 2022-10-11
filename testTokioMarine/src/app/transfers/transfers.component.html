@@ -6,7 +6,9 @@
   <p>Conta de Destino: <input type="text" name="ctDest" [(ngModel)]="account.ctDest"></p>
   <p>Valor da Transferência: <input type="number" name="ctDest" [(ngModel)]="account.value"></p>
   <p>Data da Transferência: <input type="date" name="dtTransfer" [(ngModel)]="account.dtTransfer"></p>
-  <p [(ngModel)]="account.dtAgendamento">Data de agendamento: {{data |date: 'dd/MM/yyyy'}}</p>
+  <p><input type="date" name="dtAgendamento" [(ngModel)]="account.dtAgendamento"></p>
+
+<!--  <p><input type="text" id="data" [(ngModel)]="account.dtAgendamento" value="{{data |date: 'dd/MM/yyyy'}}"></p>-->
   <button type="button" (click)="send()">Cadastrar</button>
 </form>
 
