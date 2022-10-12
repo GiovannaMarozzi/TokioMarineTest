@@ -23,13 +23,15 @@ export class TransfersComponent implements OnInit {
 
   calculator(){
     const d1 = this.account.dtTransfer;
-    const d2 = this.account.dtAgendamento;
+    const d2 = this.data.getFullYear()+"-"+(this.data.getMonth() +1)+"-"+this.data.getDate();
+    this.account.dtAgendamento = d2;
+
     // @ts-ignore
     const diffInMs = new Date(d1) - new Date(d2);
     const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
 
     let value = this.account.value
-
+    
     // @ts-ignore
     if(diffInDays == 0 || this.account.value <= 1000){
       // @ts-ignore
