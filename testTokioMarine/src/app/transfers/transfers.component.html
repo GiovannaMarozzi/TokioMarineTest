@@ -1,6 +1,5 @@
 <div id="card">
 <hr>
-
 <form>
   <div class="cad">
     <div class="title"> <h3>Cadastro de Transferências:</h3></div>
@@ -8,15 +7,15 @@
     <hr>
     <div class="form-group">
     <label>Nome</label>
-    <input type="text" class="form-control" name="ctOrigin" [(ngModel)]="account.name" placeholder="Digite seu nome completo">
+    <input type="text" class="form-control" name="ctOrigin"  [(ngModel)]="account.name" placeholder="Digite seu nome completo">
   </div>
   <div class="form-group">
     <label>Conta de Origem:</label>
-    <input type="text" class="form-control" name="ctOrigin" [(ngModel)]="account.ctOrigin" placeholder="Digite o número da sua conta">
+    <input type="text" class="form-control" name="ctOrigin" [mask]="'000000'" [(ngModel)]="account.ctOrigin" placeholder="Digite o número da sua conta">
   </div>
   <div class="form-group">
     <label>Conta de Destino:</label>
-    <input type="text" class="form-control" name="ctDest" [(ngModel)]="account.ctDest" placeholder="Digite o número da conta do destinatário">
+    <input type="text" class="form-control" name="ctDest" [mask]="'000000'" [(ngModel)]="account.ctDest" placeholder="Digite o número da conta do destinatário">
   </div>
   <div class="form-group">
     <label>Valor da Transferência:</label>

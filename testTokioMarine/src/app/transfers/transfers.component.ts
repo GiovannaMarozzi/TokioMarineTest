@@ -13,6 +13,7 @@ export class TransfersComponent implements OnInit {
   transfers: Array<any> = new Array<any>();
   public data: Date = new Date();
   valueFinal: any;
+  accountMask = "999999";
 
   constructor(private transfersService: TransfersService) { }
 
