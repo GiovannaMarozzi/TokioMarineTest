@@ -9,6 +9,8 @@ import { TransfersComponent } from './transfers/transfers.component';
 
 import {TransfersService} from "./transfers.service";
 import { FormsModule } from "@angular/forms";
+import { NgxMaskModule} from "ngx-mask";
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { FormsModule } from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [HttpClientModule, TransfersService],
   bootstrap: [AppComponent]

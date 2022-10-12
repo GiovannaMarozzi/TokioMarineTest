@@ -12,16 +12,16 @@ export class TransfersComponent implements OnInit {
   account: AccountModel = new AccountModel();
   transfers: Array<any> = new Array<any>();
   public data: Date = new Date();
-  public valueFinal: any;
-
+  valueFinal: any;
 
   constructor(private transfersService: TransfersService) { }
+
 
   ngOnInit(): void {
     this.listAccounts();
   }
 
-  send(){
+  calculator(){
     const d1 = this.account.dtTransfer;
     const d2 = this.account.dtAgendamento;
     // @ts-ignore
@@ -31,36 +31,50 @@ export class TransfersComponent implements OnInit {
     let value = this.account.value
 
     // @ts-ignore
-    if(diffInDays == 0 && this.account.value <= 1000){
+    if(diffInDays == 0 || this.account.value <= 1000){
       // @ts-ignore
       this.valueFinal = value + 3 + (30 / 100);
-      // console.log(valueFinal)
+      this.account.valueFinal = this.valueFinal;
+
       // @ts-ignore
-    }else if (diffInDays <= 10 && (this.account.value >= 1001 && this.account.value <= 2000)){
+    }else if (diffInDays <= 10 || (this.account.value >= 1001 && this.account.value <= 2000)){
       // @ts-ignore
       this.valueFinal = value + 12;
+      this.account.valueFinal = this.valueFinal;
+
       // @ts-ignore
-    }else if (diffInDays > 10 && this.account.value >= 2000){
+    }else if (diffInDays > 10 || this.account.value >= 2000){
       // @ts-ignore
       this.valueFinal = value - (8.2/100);
+      this.account.valueFinal = this.valueFinal;
+
       // @ts-ignore
-    }else if(diffInDays >= 20 && this.account.value >= 2000){
+    }else if(diffInDays >= 20 || this.account.value >= 2000){
       // @ts-ignore
       this.valueFinal = value - (6.9/100);
+      this.account.valueFinal = this.valueFinal;
+
       // @ts-ignore
-    }else if(diffInDays >= 30 && this.account.value >= 2000){
+    }else if(diffInDays >= 30 || this.account.value >= 2000){
       // @ts-ignore
       this.valueFinal = value - (4.7/100);
+      this.account.valueFinal = this.valueFinal;
+
       // @ts-ignore
-    }else if (diffInDays >= 40 && this.account.value >= 2000){
+    }else if (diffInDays >= 40 || this.account.value >= 2000){
       // @ts-ignore
       this.valueFinal = value - (1.7/100);
+      this.account.valueFinal = this.valueFinal;
     }else{
       alert("Erro ao realizar a transferência")
+      this.valueFinal = "Error"
+      this.account.valueFinal = this.valueFinal;
     }
+  }
 
+  send(){
     this.transfersService.sendTransfer(this.account).subscribe(accounts =>{
-      // this.account = new AccountModel();
+      this.account = new AccountModel();
     }, error => {console.log(error)
     })
   }

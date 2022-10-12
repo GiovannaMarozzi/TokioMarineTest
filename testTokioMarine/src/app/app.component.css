@@ -1,0 +1,30 @@
+nav{
+  height: 70px;
+}
+
+a{
+  font-family: FreeMono;
+  font-size: 30px;
+  padding-left: 550px;
+}
+
+.navbar-text{
+  font-family: FreeMono;
+  font-style: italic;
+  padding-right: 550px;
+}
+
+#body{
+  padding: 0px 350px;
+}
+
+footer{
+  padding-bottom: 50px;
+  background-color: #f3f3f3;
+}
+
+#test{
+  margin-top: 25px;
+  text-align: center;
+}
+
