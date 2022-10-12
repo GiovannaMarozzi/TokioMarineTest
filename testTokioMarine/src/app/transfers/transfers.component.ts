@@ -13,45 +13,12 @@ export class TransfersComponent implements OnInit {
   transfers: Array<any> = new Array<any>();
   public data: Date = new Date();
   valueFinal: any;
-  accountMask = "999999";
 
   constructor(private transfersService: TransfersService) { }
-
-  date1 = new Date();
-
-  // currentYear =this.data.getFullYear()
-  // currentMonth = this.data.getMonth() +1;
-  // currentDay = this.data.getDate()
-  // //YYYY-MM-DD
-  // TodayDate = "2022-11-20";
-  //
-  // finalMonth: any;
-  // finalDay: any;
 
 
   ngOnInit(): void {
     this.listAccounts();
-
-    // if(this.currentMonth <10){
-    //   this.finalMonth = "0" + this.currentDay;
-    // }else{
-    //   this.finalMonth = this.currentDay;
-    // }
-    //
-    // if(this.currentDay <10){
-    //   this.finalDay = "0" + this.currentDay;
-    // }else{
-    //   this.finalDay = this.currentDay;
-    // }
-    //
-    // this.TodayDate = this.currentYear+"-"+this.finalMonth+"-"+this.finalDay;
-    // console.log(this.currentYear)
-    // console.log(this.finalMonth)
-    // console.log(this.finalDay)
-
-    // console.log(this.data.getDate())
-    // console.log(this.data.getMonth() +1)
-    // console.log(this.data.getFullYear())
   }
 
   calculator(){
@@ -64,38 +31,45 @@ export class TransfersComponent implements OnInit {
     let value = this.account.value
 
     // @ts-ignore
-    if(diffInDays == 0 && this.account.value <= 1000){
+    if(diffInDays == 0 || this.account.value <= 1000){
       // @ts-ignore
       this.valueFinal = value + 3 + (30 / 100);
-      // console.log(valueFinal)
+      this.account.valueFinal = this.valueFinal;
+
       // @ts-ignore
-    }else if (diffInDays <= 10 && (this.account.value >= 1001 && this.account.value <= 2000)){
+    }else if (diffInDays <= 10 || (this.account.value >= 1001 && this.account.value <= 2000)){
       // @ts-ignore
       this.valueFinal = value + 12;
+      this.account.valueFinal = this.valueFinal;
+
       // @ts-ignore
-    }else if (diffInDays > 10 && this.account.value >= 2000){
+    }else if (diffInDays > 10 || this.account.value >= 2000){
       // @ts-ignore
       this.valueFinal = value - (8.2/100);
+      this.account.valueFinal = this.valueFinal;
+
       // @ts-ignore
-    }else if(diffInDays >= 20 && this.account.value >= 2000){
+    }else if(diffInDays >= 20 || this.account.value >= 2000){
       // @ts-ignore
       this.valueFinal = value - (6.9/100);
+      this.account.valueFinal = this.valueFinal;
+
       // @ts-ignore
-    }else if(diffInDays >= 30 && this.account.value >= 2000){
+    }else if(diffInDays >= 30 || this.account.value >= 2000){
       // @ts-ignore
       this.valueFinal = value - (4.7/100);
+      this.account.valueFinal = this.valueFinal;
+
       // @ts-ignore
-    }else if (diffInDays >= 40 && this.account.value >= 2000){
+    }else if (diffInDays >= 40 || this.account.value >= 2000){
       // @ts-ignore
       this.valueFinal = value - (1.7/100);
+      this.account.valueFinal = this.valueFinal;
     }else{
       alert("Erro ao realizar a transferência")
       this.valueFinal = "Error"
       this.account.valueFinal = this.valueFinal;
     }
-    console.log(this.data)
-
-
   }
 
   send(){
