@@ -1,41 +1,74 @@
-<h2>Cadastro de Transferências:</h2>
+<div id="card">
 <hr>
+
 <form>
-  <p>Nome: <input type="text" name="name" [(ngModel)]="account.name"></p>
-  <p>Conta de Origem: <input type="text" name="ctOrigin" [(ngModel)]="account.ctOrigin"></p>
-  <p>Conta de Destino: <input type="text" name="ctDest" [(ngModel)]="account.ctDest"></p>
-  <p>Valor da Transferência: <input type="number" name="ctDest" [(ngModel)]="account.value"></p>
-  <p>Data da Transferência: <input type="date" name="dtTransfer" [(ngModel)]="account.dtTransfer"></p>
-  <p><input type="date" name="dtAgendamento" [(ngModel)]="account.dtAgendamento"></p>
+  <div class="cad">
+    <div class="title"> <h3>Cadastro de Transferências:</h3></div>
+    <br>
+    <hr>
+    <div class="form-group">
+    <label>Nome</label>
+    <input type="text" class="form-control" name="ctOrigin" [(ngModel)]="account.name" placeholder="Digite seu nome completo">
+  </div>
+  <div class="form-group">
+    <label>Conta de Origem:</label>
+    <input type="text" class="form-control" name="ctOrigin" [(ngModel)]="account.ctOrigin" placeholder="Digite o número da sua conta">
+  </div>
+  <div class="form-group">
+    <label>Conta de Destino:</label>
+    <input type="text" class="form-control" name="ctDest" [(ngModel)]="account.ctDest" placeholder="Digite o número da conta do destinatário">
+  </div>
+  <div class="form-group">
+    <label>Valor da Transferência:</label>
+    <input type="number" class="form-control" name="ctDest" [(ngModel)]="account.value" placeholder="Digite o valor que deseja transferir">
+  </div>
+  <div class="form-group">
+    <label>Digite a data de Transferência:</label>
+    <input type="date" class="form-control" name="dtTransfer" [(ngModel)]="account.dtTransfer" placeholder="Digite o valor que deseja transferir">
+  </div>
+  <div class="form-group">
+    <label>A data de agendamento será:</label>
+    <input type="date" class="form-control" name="dtAgendamento" [(ngModel)]="account.dtAgendamento" >
+  </div>
+  <div class="form-group">
+    <label>O valor calculádo que será transferido conforme a data escolhida será:</label>
+    <input type="text" class="form-control" name="valueFinal" [(ngModel)]="account.valueFinal" value="{{valueFinal}}" disabled="true">
+  </div>
 
-<!--  <p><input type="text" id="data" [(ngModel)]="account.dtAgendamento" value="{{data |date: 'dd/MM/yyyy'}}"></p>-->
-  <button type="button" (click)="send()">Cadastrar</button>
+    <button type="button" class="btn btn-primary" id="ok" onchange="toggleButton()" (click)="calculator()">Ok</button>
+    <hr>
+    <button type="button" class="btn btn-primary" id="send" onchange="toggleButton()" (click)="send()">Cadastrar</button>
+  </div>
 </form>
-
-<h2>Cadastrados: </h2>
-<table >
-  <tr>
-    <th>Id</th>
-    <th>Nome</th>
-    <th>Conta de Origem</th>
-    <th>Conta de Destino</th>
-    <th>Valor da Transferência</th>
-    <th>Data de Transferencia</th>
-    <th>Data de Agendamento</th>
-    <th>Resultádo Final</th>
-  </tr>
-
-  <tr *ngFor="let account of transfers ">
-    <th>{{account.id}}</th>
-    <th>{{account.name}}</th>
-    <th>{{account.ctOrigin}}</th>
-    <th>{{account.ctDest}}</th>
-    <th>{{account.value}}</th>
-    <th>{{account.dtTransfer}}</th>
-    <th>{{account.dtAgendamento}}</th>
-    <th>{{account.valueFinal}}</th>
-  </tr>
-</table>
-
-<!--{{valueFinal}}-->
-
+  <br>
+<!--  [value]="TodayDate"-->
+  <div class="cad">
+    <div class="title"><h3>Cadastrados: </h3></div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Conta de Origem</th>
+          <th scope="col">Conta de Destino</th>
+          <th scope="col">Valor da Transferência</th>
+          <th scope="col">Data de Transferencia</th>
+          <th scope="col">Data de Agendamento</th>
+          <th scope="col">Resultado Final</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr *ngFor="let account of transfers ">
+            <th>{{account.id}}</th>
+            <th>{{account.name}}</th>
+            <th>{{account.ctOrigin}}</th>
+            <th>{{account.ctDest}}</th>
+            <th>{{account.value}}</th>
+            <th>{{account.dtTransfer}}</th>
+            <th>{{account.dtAgendamento}}</th>
+            <th>{{account.valueFinal}}</th>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
