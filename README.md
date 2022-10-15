@@ -1,6 +1,6 @@
 # TokioMarineTest
 
-Nome: Giovanna Machado Cipolletrta Marozzi
+Nome: Giovanna Machado Cipolletta Marozzi
 
 Teste referente: https://github.com/tm-vagas/avaliacao-full-stack
 
